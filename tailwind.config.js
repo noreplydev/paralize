@@ -17,9 +17,9 @@ module.exports = {
         }
       }, 
       animation: {
-        'scale-down': 'scale-down 0.12s 1s ease-out forwards', 
-        'scale-down-md': 'scale-down 0.12s 1.20s ease-out forwards', 
-        'scale-down-lg': 'scale-down 0.12s 1.40s ease-out forwards',
+        'scale-down': 'scale-down 0.12s 0.2s ease-out forwards', 
+        'scale-down-md': 'scale-down 0.12s 0.4s ease-out forwards', 
+        'scale-down-lg': 'scale-down 0.12s 0.6s ease-out forwards',
       }
     }
   },
