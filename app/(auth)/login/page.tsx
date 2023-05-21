@@ -18,14 +18,14 @@ export default function Register () {
           className='text-[#d9d9d9] font-light text-sm text-center pb-6 mb-6 border-b-[1px]
           border-[#efefef20]'
         >
-          Don´t have an account?{' '}
+          Already have an account?{' '}
           <span className='text-blue-500 hover:underline cursor-pointer'>
             <Link href='/register'>Sign up</Link>
           </span>
         </p>
         <div className='relative flex flex-col items-start justify-start gap-3'>
-          <Google />
-          <Github />
+          {/* <Google /> */}
+          <Github type='signIn' />
         </div>
       </div>
     </main>
