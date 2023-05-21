@@ -9,10 +9,10 @@ export const Github = () => {
   return (
     <div
       onClick={() => {
-        signIn('github')
+        signIn('github') // This is the magic. Provided by next-auth
       }}
       className='relative flex flex-row justify-center items-center h-fit w-full bg-[#191919] 
-            rounded-lg py-3 px-10 gap-x-2 cursor-pointer'
+        rounded-lg py-3 px-10 gap-x-2 cursor-pointer'
     >
       <div className='relative h-full w-fit aspect-square'>
         <Image src={github} fill={true} alt='Paralize logo image' />

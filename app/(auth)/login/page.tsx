@@ -5,10 +5,6 @@ import { Github, Google } from '@/components/AuthProviders'
 import github from '/public/assets/png/github-white.png'
 
 export default function Register () {
-  const handleGithub = () => {
-    window.location.href = 'http://localhost:3000/api/auth/github'
-  }
-
   return (
     <main className='relative h-screen w-screen flex flex-col items-center justify-center'>
       <div
@@ -17,14 +13,14 @@ export default function Register () {
         animate-scale-down'
       >
         <Image src={github} width={70} height={70} alt='Paralize logo image' />
-        <h1 className='text-white font-normal mt-4 mb-1'>Sign up</h1>
+        <h1 className='text-white font-normal mt-4 mb-1'>Sign in</h1>
         <p
           className='text-[#d9d9d9] font-light text-sm text-center pb-6 mb-6 border-b-[1px]
           border-[#efefef20]'
         >
-          Already have an account?{' '}
+          Don´t have an account?{' '}
           <span className='text-blue-500 hover:underline cursor-pointer'>
-            <Link href='/login'>Sign in</Link>
+            <Link href='/register'>Sign up</Link>
           </span>
         </p>
         <div className='relative flex flex-col items-start justify-start gap-3'>
