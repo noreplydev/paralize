@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Github, Google } from '@/components/AuthProviders'
 
-import github from '/public/assets/png/github-white.png'
+import paralize from '/public/assets/png/paralize.png'
 
 export default function Register () {
   return (
@@ -12,7 +12,13 @@ export default function Register () {
         border-[1px] border-[#efefef20] rounded-xl shadow-lg shadow-[#67676720] px-10 py-12 opacity-0 
         animate-scale-down'
       >
-        <Image src={github} width={70} height={70} alt='Paralize logo image' />
+        <Image
+          src={paralize}
+          width={80}
+          height={80}
+          alt='Paralize logo image'
+          className='rounded-full'
+        />
         <h1 className='text-white font-normal mt-4 mb-1'>Sign in</h1>
         <p
           className='text-[#d9d9d9] font-light text-sm text-center pb-6 mb-6 border-b-[1px]
