@@ -1,15 +1,23 @@
 'use client'
-import { signIn } from 'next-auth/react'
+import { signIn, signOut } from 'next-auth/react'
 import Image from 'next/image'
 
 import github from '/public/assets/png/github-white.png'
 import google from '/public/assets/png/google.png'
 
-export const Github = () => {
+export const Github = ({ type }: { type: String }) => {
   return (
     <div
       onClick={() => {
-        signIn('github') // This is the magic. Provided by next-auth
+        if (type === 'signIn') {
+          signIn('github', {
+            callbackUrl: `${window.location.origin}/dashboard`
+          }) // This is the magic. Provided by next-auth
+
+          return
+        }
+
+        signOut()
       }}
       className='relative flex flex-row justify-center items-center h-fit w-full bg-[#191919] 
         rounded-lg py-3 px-10 gap-x-2 cursor-pointer'

@@ -24,8 +24,8 @@ export default function Register () {
           </span>
         </p>
         <div className='relative flex flex-col items-start justify-start gap-3'>
-          <Google />
-          <Github />
+          {/* <Google /> */}
+          <Github type='signIn' />
         </div>
       </div>
     </main>
