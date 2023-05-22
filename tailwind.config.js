@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary': '#151515',
+      }, 
       backgroundImage: {
         'grid': 'url("/assets/svg/grid.svg")'
       },

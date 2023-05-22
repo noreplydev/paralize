@@ -24,7 +24,7 @@ export default function Register () {
           className='text-[#d9d9d9] font-light text-sm text-center pb-6 mb-6 border-b-[1px]
           border-[#efefef20]'
         >
-          Already have an account?{' '}
+          doesn&apos;t have an account?{' '}
           <span className='text-blue-500 hover:underline cursor-pointer'>
             <Link href='/register'>Sign up</Link>
           </span>
