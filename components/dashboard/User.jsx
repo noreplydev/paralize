@@ -9,7 +9,7 @@ const UserModal = () => {
   return (
     <div
       id='modal'
-      className='absolute top-16 right-0 w-48 h-48 bg-white rounded-lg shadow-lg'
+      className='absolute top-16 right-0 w-48 h-fit bg-primary rounded-lg shadow-lg'
     >
       hola
     </div> 
@@ -37,25 +37,27 @@ export default function User({session}) {
   }, [showModal])
   
   return (
-    <div
-      onClick={() => setShowModal(true)}
-      className='relative flex flex-row justify-center items-center h-fit w-fit gap-x-3
-      px-4 py-3 rounded-lg hover:bg-primary transition-all duration-75 ease-in-out cursor-pointer'
-    >
-      <Image
-        className='rounded-full'
-        src={session?.user?.image ?? github}
-        height={28}
-        width={28}
-        alt='user image'
-      />
-      <p className='text-white font-normal text-md'>
-        {session?.user?.name ?? 'User'}
-      </p>
-      <Image src={arrow} height={12} width={7} alt='user image' />
+    <>
+      <div
+        onClick={() => setShowModal(true)}
+        className='relative flex flex-row justify-center items-center h-fit w-fit gap-x-3
+        px-4 py-3 rounded-lg hover:bg-primary transition-all duration-75 ease-in-out cursor-pointer'
+      >
+        <Image
+          className='rounded-full'
+          src={session?.user?.image ?? github}
+          height={28}
+          width={28}
+          alt='user image'
+        />
+        <p className='text-white font-normal text-md'>
+          {session?.user?.name ?? 'User'}
+        </p>
+        <Image src={arrow} height={12} width={7} alt='user image' />
+      </div>
       {
         showModal && <UserModal />
       }
-    </div>
+    </>
   )
 }
