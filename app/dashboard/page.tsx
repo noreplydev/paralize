@@ -1,25 +1,35 @@
 import { getCurrentSession } from '@/lib/session'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
+import { Session } from '@/types/Session'
 
 import paralize from '@/public/assets/png/paralize-transparent.png'
-import User from '@/components/dashboard/User'
+import UserPin from '@/components/dashboard/UserPin'
 
 export default async function Dashboard () {
   const session = await getCurrentSession()
 
   if (!session) {
-    // redirect('/login')
+    redirect('/login')
   }
 
   return (
     <div
-      className='relative flex flex-column items-start justify-start px-6 py-4
-        h-full w-full md:px-24 md:py-12'
+      className='relative flex flex-col items-start justify-start px-6 py-4
+        h-screen w-full md:px-24 md:py-12'
     >
-      <div className='relative flex flex-row h-fit w-full justify-between items-center'>
+      <div
+        className='relative flex flex-row h-fit w-full justify-between 
+        items-center'
+      >
         <Image src={paralize} height={40} width={40} alt='paralize' />
-        <User session={session} />
+        <UserPin session={session} />
+      </div>
+      <div
+        className='relative flex flex-col h-full w-full 
+        pt-20 text-3xl font-medium'
+      >
+        <h1 className='text-white '>Projects</h1>
       </div>
     </div>
   )

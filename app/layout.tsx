@@ -9,7 +9,7 @@ import { Sora } from 'next/font/google'
 const sora = Sora({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Next.js 13 parallel routes',
+  title: 'Paralize',
   description: 'This is a demo of Next.js 13 parallel routes'
 }
 
