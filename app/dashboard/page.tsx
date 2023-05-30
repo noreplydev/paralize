@@ -7,7 +7,11 @@ import paralize from '@/public/assets/png/paralize-transparent.png'
 import UserPin from '@/components/dashboard/UserPin'
 import Projects from '@/components/dashboard/Projects'
 
-export default async function Dashboard () {
+export default async function Dashboard ({
+  searchParams
+}: {
+  searchParams: any
+}) {
   const session = await getCurrentSession()
 
   if (!session) {
@@ -31,7 +35,7 @@ export default async function Dashboard () {
         pt-10 text-3xl font-medium'
       >
         <h1 className='text-white '>Projects</h1>
-        <Projects />
+        <Projects searchParams={searchParams} />
       </div>
     </div>
   )
