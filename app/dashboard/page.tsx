@@ -5,6 +5,7 @@ import { Session } from '@/types/Session'
 
 import paralize from '@/public/assets/png/paralize-transparent.png'
 import UserPin from '@/components/dashboard/UserPin'
+import Projects from '@/components/dashboard/Projects'
 
 export default async function Dashboard () {
   const session = await getCurrentSession()
@@ -27,9 +28,10 @@ export default async function Dashboard () {
       </div>
       <div
         className='relative flex flex-col h-full w-full 
-        pt-20 text-3xl font-medium'
+        pt-10 text-3xl font-medium'
       >
         <h1 className='text-white '>Projects</h1>
+        <Projects />
       </div>
     </div>
   )
