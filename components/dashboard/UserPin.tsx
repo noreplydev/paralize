@@ -33,11 +33,6 @@ const UserModal = () => {
         border-solid border-[1px] border-secondary'
     >
       {options.map((option, key) => {
-        let color = '#ffffff'
-        if (option.name === 'Logout') {
-          color = '#DE3939'
-        }
-
         return (
           <div
             key={key}
@@ -51,13 +46,23 @@ const UserModal = () => {
               width={20}
               alt='Logout image'
             />
-            <p
-              key={key}
-              className={`text-[${color}]`}
-              onClick={() => signOut()}
-            >
-              {option.name}
-            </p>
+            {option.name !== 'Logout' ? (
+              <p
+                key={key}
+                className={`text-[#ffffff]`}
+                onClick={() => signOut()}
+              >
+                {option.name}
+              </p>
+            ) : (
+              <p
+                key={key}
+                className={`text-[#DE3939]`}
+                onClick={() => signOut()}
+              >
+                {option.name}
+              </p>
+            )}
           </div>
         )
       })}

@@ -11,7 +11,7 @@ module.exports = {
         'background': '#0a0a0a', 
         'primary': '#151515',
         'secondary': '#252525', 
-        'gray': '#3c3c3c',
+        'gray': '#404040',
         'accent': '#0056ff'
       }, 
       backgroundImage: {
