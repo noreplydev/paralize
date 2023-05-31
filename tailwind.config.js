@@ -10,7 +10,9 @@ module.exports = {
       colors: {
         'background': '#0a0a0a', 
         'primary': '#151515',
-        'secondary': '#252525'
+        'secondary': '#252525', 
+        'gray': '#3c3c3c',
+        'accent': '#0056ff'
       }, 
       backgroundImage: {
         'grid': 'url("/assets/svg/grid.svg")'

@@ -15,7 +15,7 @@ export default async function Dashboard ({
   const session = await getCurrentSession()
 
   if (!session) {
-    redirect('/login')
+    // redirect('/login')
   }
 
   return (
