@@ -41,19 +41,20 @@ export default function UserPin ({ session }: { session: Session }) {
   const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
-    function handleClickOutside (event) {
-      if (event?.target?.id === 'modal') return
+    function handleClickOutside (event: React.MouseEvent<HTMLElement>) {
+      const target = event.target as HTMLElement
+      if (target.id === 'modal') return
       setShowModal(false)
     }
 
     if (showModal) {
       // Bind the event listener
-      document.addEventListener('click', handleClickOutside)
+      document.addEventListener('click', handleClickOutside as any)
     }
 
     return () => {
       // Unbind the event listener on clean up
-      document.removeEventListener('click', handleClickOutside)
+      document.removeEventListener('click', handleClickOutside as any)
     }
   }, [showModal])
 
