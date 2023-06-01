@@ -1,14 +1,25 @@
 import SearchBar from './Searchbar'
 
-export default function Projects ({ searchParams }: any) {
+async function getProjects () {
+  const res = await fetch(`${process.env.DOMAIN}/api/projects`)
+  const projects = await res.json()
+  return projects
+}
+
+{
+  /* @ts-expect-error Async Server Component */
+}
+
+export default async function Projects () {
   return (
     <div>
       <SearchBar />
-      <ProjectsGrid searchParam={searchParams?.search || ''} />
+      <ProjectsGrid />
     </div>
   )
 }
 
-function ProjectsGrid ({ searchParam }: { searchParam: string }) {
-  return <div>{searchParam}</div>
+async function ProjectsGrid () {
+  const projects = await getProjects()
+  return <div>{projects}</div>
 }

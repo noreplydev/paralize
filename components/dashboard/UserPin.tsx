@@ -8,10 +8,22 @@ import { signOut } from 'next-auth/react'
 import { Session } from '@/types/Session'
 
 // Icons
+import user from '@/public/assets/svg/user.svg'
+import card from '@/public/assets/svg/credit-card.svg'
 import create from '@/public/assets/svg/create.svg'
 import logout from '@/public/assets/svg/logout.svg'
 
 const options = [
+  {
+    name: 'Account settings',
+    icon: user,
+    action: () => {}
+  },
+  {
+    name: 'Billing details',
+    icon: card,
+    action: () => {}
+  },
   {
     name: 'Create project',
     icon: create,
@@ -49,7 +61,7 @@ const UserModal = () => {
             {option.name !== 'Logout' ? (
               <p
                 key={key}
-                className={`text-[#ffffff]`}
+                className={`text-[#c3c3c3]`}
                 onClick={() => signOut()}
               >
                 {option.name}
