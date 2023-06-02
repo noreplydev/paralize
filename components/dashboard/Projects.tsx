@@ -21,5 +21,6 @@ export default async function Projects () {
 
 async function ProjectsGrid () {
   const projects = await getProjects()
-  return <div>{projects}</div>
+  console.log(projects)
+  return <div>{projects.example}</div>
 }
