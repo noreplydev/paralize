@@ -1,11 +1,9 @@
 import { getCurrentSession } from '@/lib/session'
 import Image from 'next/image'
-import { redirect } from 'next/navigation'
-import { Session } from '@/types/Session'
 
-import paralize from '@/public/assets/png/paralize-transparent.png'
 import UserPin from '@/components/dashboard/UserPin'
 import Projects from '@/components/dashboard/Projects'
+import SearchBar from '@/components/dashboard/Searchbar'
 
 export default async function Dashboard ({
   searchParams
@@ -20,23 +18,26 @@ export default async function Dashboard ({
 
   return (
     <div
-      className='relative flex flex-col items-start justify-start px-6 py-4
-        h-screen w-full md:px-24 md:py-12'
+      className='relative flex flex-col items-start justify-start px-6 
+        h-full w-full md:px-24'
     >
-      <div
-        className='relative flex flex-row h-fit w-full justify-between 
-        items-center'
-      >
-        <Image src={paralize} height={40} width={40} alt='paralize' />
-        <UserPin session={session} />
-      </div>
-      <div
-        className='relative flex flex-col h-full w-full 
-        pt-10 text-3xl font-medium'
-      >
-        <h1 className='text-white '>Projects</h1>
-        <Projects searchParams={searchParams} />
-      </div>
+      <h1 className='text-white text-3xl font-medium'>Projects</h1>
+      <SearchBar />
+      <ProjectsGrid searchParams={searchParams} />
     </div>
   )
+}
+
+async function ProjectsGrid ({ searchParams }: { searchParams: any }) {
+  const projects = await getProjects(searchParams)
+  return <div>{projects.example}</div>
+}
+
+async function getProjects (params: any) {
+  const searchParams = new URLSearchParams(params)
+  const res = await fetch(
+    `${process.env.DOMAIN}/api/projects?${searchParams.toString()}`
+  )
+  const projects = await res.json()
+  return projects
 }

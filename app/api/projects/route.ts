@@ -5,6 +5,6 @@ export async function GET(request: Request) {
   const search = searchParams.get("search") || "";
 
   return NextResponse.json({
-    example: 'hello search', 
+    example: search, 
   })    
 }

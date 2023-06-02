@@ -6,7 +6,7 @@ import github from '/public/assets/png/github.png'
 export default function Home () {
   return (
     <main
-      className='h-screen w-screen bg-neutral-950 flex flex-col items-center justify-center
+      className='h-full w-full bg-neutral-950 flex flex-col items-center justify-center
       bg-grid bg-cover bg-no-repeat bg-center will-change-contents'
     >
       <div className='relative flex flex-row h-fit w-fit gap-3 ml-2'>
@@ -50,9 +50,9 @@ export default function Home () {
           start for free
         </Link>
       </div>
-      <p className='absolute bottom-6 left-2/4 translate-x-[-50%] text-white font-thin'>
-        by cristian
-      </p>
     </main>
   )
 }
+// <p className='absolute bottom-6 left-2/4 translate-x-[-50%] text-white font-thin'>
+//   by cristian
+// </p>

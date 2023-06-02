@@ -6,45 +6,17 @@ import arrow from '@/public/assets/png/arrow-expand.png'
 import { useEffect, useState } from 'react'
 import { signOut } from 'next-auth/react'
 import { Session } from '@/types/Session'
-
-// Icons
-import user from '@/public/assets/svg/user.svg'
-import card from '@/public/assets/svg/credit-card.svg'
-import create from '@/public/assets/svg/create.svg'
-import logout from '@/public/assets/svg/logout.svg'
-
-const options = [
-  {
-    name: 'Account settings',
-    icon: user,
-    action: () => {}
-  },
-  {
-    name: 'Billing details',
-    icon: card,
-    action: () => {}
-  },
-  {
-    name: 'Create project',
-    icon: create,
-    action: () => {}
-  },
-  {
-    name: 'Logout',
-    icon: logout,
-    action: () => signOut()
-  }
-]
+import { ModalOptions } from '@/lib/UserModalOptions'
 
 const UserModal = () => {
   return (
     <div
       id='modal'
       className='absolute top-16 right-0 w-fit h-fit bg-primary 
-        rounded-lg shadow-lg px-3 py-3.5 cursor-pointer z-10
+        rounded-lg shadow-lg px-3 py-3.5 md:mx-24 md:my-12 cursor-pointer z-10
         border-solid border-[1px] border-secondary'
     >
-      {options.map((option, key) => {
+      {ModalOptions.map((option, key) => {
         return (
           <div
             key={key}
@@ -61,7 +33,7 @@ const UserModal = () => {
             {option.name !== 'Logout' ? (
               <p
                 key={key}
-                className={`text-[#c3c3c3]`}
+                className={`text-[#c3c3c3] font-light`}
                 onClick={() => signOut()}
               >
                 {option.name}
@@ -69,7 +41,7 @@ const UserModal = () => {
             ) : (
               <p
                 key={key}
-                className={`text-[#DE3939]`}
+                className={`text-[#DE3939] font-light`}
                 onClick={() => signOut()}
               >
                 {option.name}
