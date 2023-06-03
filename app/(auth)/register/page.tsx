@@ -10,7 +10,7 @@ export default function Register () {
       <div
         className='relative flex flex-col items-center justify-start h-fit w-fit border-solid 
         border-[1px] border-[#efefef20] rounded-xl shadow-lg shadow-[#67676720] px-10 py-12 opacity-0 
-        animate-scale-down'
+        animate-scale-down mt-[-120px]'
       >
         <Image
           src={paralize}

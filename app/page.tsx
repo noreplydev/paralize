@@ -7,7 +7,7 @@ export default function Home () {
   return (
     <main
       className='h-full w-full bg-neutral-950 flex flex-col items-center justify-center
-      bg-grid bg-cover bg-no-repeat bg-center will-change-contents'
+      bg-grid bg-cover bg-no-repeat bg-center will-change-contents mt-[-120px]'
     >
       <div className='relative flex flex-row h-fit w-fit gap-3 ml-2'>
         <div className='relative grid place-items-center h-12 w-12'>

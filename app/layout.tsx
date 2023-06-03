@@ -31,7 +31,7 @@ export default async function RootLayout ({
       >
         <div
           className='relative flex flex-row h-fit w-full justify-between 
-          items-center px-6 py-4 md:px-24 md:py-12 mb-[-120px] z-[9999999999999999]'
+            items-center px-6 py-4 md:px-24 md:py-12 z-[9999999999999999]'
         >
           <Link href='/'>
             <Image src={paralize} height={40} width={40} alt='paralize' />
