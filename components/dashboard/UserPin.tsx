@@ -7,8 +7,10 @@ import { useEffect, useState } from 'react'
 import { signOut } from 'next-auth/react'
 import { Session } from '@/types/Session'
 import { loggedInOptions, loggedOutOptions } from '@/lib/UserModalOptions'
+import { useRouter } from 'next/navigation'
 
 const UserModal = ({ options }) => {
+  const router = useRouter()
   return (
     <div
       id='modal'
@@ -33,7 +35,7 @@ const UserModal = ({ options }) => {
             <p
               key={key}
               className={`${color} font-light whitespace-nowrap text-base select-none`}
-              onClick={() => signOut()}
+              onClick={() => option.action({router})}
             >
               {option.name}
             </p>
@@ -77,15 +79,17 @@ export default function UserPin ({ session }: { session: Session }) {
           duration-75 ease-in-out cursor-pointer border-solid 
           border-[1px] border-background hover:border-secondary'
       >
-        <Image
+        {
+          session?.user?.image && <Image
           className='rounded-full'
-          src={session?.user?.image ?? github}
+          src={session.user.image }
           height={28}
           width={28}
           alt='user image'
         />
+        }
         <p className='text-white font-normal text-base select-none'>
-          {session?.user?.name ?? 'User'}
+          {session?.user?.name ?? 'Login now'}
         </p>
         <Image src={arrow} height={12} width={7} alt='user image' />
       </div>

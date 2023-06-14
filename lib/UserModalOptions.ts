@@ -16,7 +16,9 @@ export const loggedInOptions = [
   {
     name: 'Billing details',
     icon: card,
-    action: () => { }
+    action: ({ router }) => {
+      router.push('/billing')
+    }
   },
   {
     name: 'Create project',
@@ -34,9 +36,8 @@ export const loggedOutOptions = [
   {
     name: 'Login',
     icon: user,
-    action: () => {
-      const Router = useRouter()
-      Router.push('/login')
+    action: ({ router }) => {
+      router.push('/login')
     }
   },
 ]
