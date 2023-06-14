@@ -12,8 +12,8 @@ datasource db {
 
 model Project {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  projectName String   @unique
-  description String
+  name        String   @unique @map("projectName")
+  description String   @default("") @map("projectDescription")
   forms       String[] @default([])
   createdAt   DateTime @default(now())
 }

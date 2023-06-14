@@ -10,7 +10,9 @@ export const loggedInOptions = [
   {
     name: 'Account settings',
     icon: user,
-    action: () => { }
+    action: ({ router }: { router: AppRouterInstance }) => {
+      router.push('/account')
+    }
   },
   {
     name: 'Billing details',
