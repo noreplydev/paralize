@@ -6,9 +6,9 @@ import arrow from '@/public/assets/png/arrow-expand.png'
 import { useEffect, useState } from 'react'
 import { signOut } from 'next-auth/react'
 import { Session } from '@/types/Session'
-import { ModalOptions } from '@/lib/UserModalOptions'
+import { loggedInOptions, loggedOutOptions } from '@/lib/UserModalOptions'
 
-const UserModal = () => {
+const UserModal = ({ options }) => {
   return (
     <div
       id='modal'
@@ -16,7 +16,7 @@ const UserModal = () => {
         rounded-lg px-3 py-3.5 z-10 flex flex-col justify-start items-center
         border-solid border-[1px] border-secondary'
     >
-      {ModalOptions.map((option, key) => {
+      {options.map((option, key) => {
         const color =
           option.name !== 'Logout' ? 'text-[#c3c3c3]' : 'text-[#DE3939]'
 
@@ -89,7 +89,7 @@ export default function UserPin ({ session }: { session: Session }) {
         </p>
         <Image src={arrow} height={12} width={7} alt='user image' />
       </div>
-      {showModal && <UserModal />}
+      {showModal && <UserModal options={session ? loggedInOptions : loggedOutOptions}/>}
     </div>
   )
 }
