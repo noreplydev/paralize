@@ -4,8 +4,7 @@ import card from '@/public/assets/svg/credit-card.svg'
 import create from '@/public/assets/svg/create.svg'
 import logout from '@/public/assets/svg/logout.svg'
 import { signOut } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
-
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 
 export const loggedInOptions = [
   {
@@ -16,7 +15,7 @@ export const loggedInOptions = [
   {
     name: 'Billing details',
     icon: card,
-    action: ({ router }) => {
+    action: ({ router }: { router: AppRouterInstance }) => {
       router.push('/billing')
     }
   },
@@ -36,7 +35,7 @@ export const loggedOutOptions = [
   {
     name: 'Login',
     icon: user,
-    action: ({ router }) => {
+    action: ({ router }: { router: AppRouterInstance }) => {
       router.push('/login')
     }
   },

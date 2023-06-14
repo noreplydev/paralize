@@ -8,8 +8,9 @@ import { signOut } from 'next-auth/react'
 import { Session } from '@/types/Session'
 import { loggedInOptions, loggedOutOptions } from '@/lib/UserModalOptions'
 import { useRouter } from 'next/navigation'
+import { Option } from '@/types/Option'
 
-const UserModal = ({ options }) => {
+const UserModal = ({ options }: { options: Array<Option>}) => {
   const router = useRouter()
   return (
     <div
