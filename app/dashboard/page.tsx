@@ -22,6 +22,7 @@ export default async function Dashboard ({
     >
       <h1 className='text-white text-3xl font-medium'>Projects</h1>
       <SearchBar />
+      {/* @ts-expect-error Server Component */}
       <ProjectsGrid searchParams={searchParams} />
     </div>
   )
