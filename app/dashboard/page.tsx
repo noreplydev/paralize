@@ -2,7 +2,6 @@ import { getCurrentSession } from '@/lib/session'
 import Image from 'next/image'
 
 import UserPin from '@/components/dashboard/UserPin'
-import Projects from '@/components/dashboard/Projects'
 import SearchBar from '@/components/dashboard/Searchbar'
 
 export default async function Dashboard ({
