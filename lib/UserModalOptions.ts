@@ -8,6 +8,13 @@ import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 
 export const loggedInOptions = [
   {
+    name: 'Dashboard',
+    icon: user,
+    action: ({ router }: { router: AppRouterInstance }) => {
+      router.push('/dashboard')
+    }
+  },
+  {
     name: 'Account settings',
     icon: user,
     action: ({ router }: { router: AppRouterInstance }) => {

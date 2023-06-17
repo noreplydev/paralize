@@ -4,7 +4,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const search = searchParams.get("search") || "";
 
-  return NextResponse.json({
-    example: search, 
-  })    
+
+  return NextResponse.json(JSON.stringify({
+    example: 'hola',
+  }))
 }

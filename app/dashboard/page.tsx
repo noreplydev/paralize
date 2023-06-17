@@ -24,6 +24,7 @@ export default async function Dashboard ({
       <SearchBar />
       {/* @ts-expect-error Server Component */}
       <ProjectsGrid searchParams={searchParams} />
+      <p>hola</p>
     </div>
   )
 }
@@ -37,7 +38,9 @@ async function getProjects (params: any) {
   const searchParams = new URLSearchParams(params)
   const res = await fetch(
     `${process.env.DOMAIN}/api/projects?${searchParams.toString()}`
-  )
-  const projects = await res.json()
-  return projects
+  ).then(res => res.json())
+
+  return {
+    example: 'hli'
+  }
 }
