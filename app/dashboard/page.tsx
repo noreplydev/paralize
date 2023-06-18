@@ -40,6 +40,8 @@ async function getProjects (params: any) {
     `${process.env.DOMAIN}/api/projects?${searchParams.toString()}`
   ).then(res => res.json())
 
+  console.log(res)
+
   return {
     example: 'hli'
   }
