@@ -1,21 +1,23 @@
 import { newConnection } from "@/db/connection";
-import { Projects } from "@/models/project";
+import { Projects } from "@/models/projects";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const search = searchParams.get("search") || "";
+    const { searchParams } = new URL(request.url);
+    const search = searchParams.get("search") || "";
 
-  await newConnection()
+    await newConnection()
 
-  try {
-    const projects = await Projects.find()
+    try {
+        const projects = await Projects.find()
 
-    return NextResponse.json({
-      projects: projects,
-    })
-  } catch (err) {
-    console.log('error', err);
-    return NextResponse.error()
-  }
+        console.log('projects', projects)
+
+        return NextResponse.json({
+            example: 'Hello World!'
+        })
+    } catch (err) {
+        console.log('error', err);
+        return NextResponse.error()
+    }
 }

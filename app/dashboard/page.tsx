@@ -1,7 +1,4 @@
 import { getCurrentSession } from '@/lib/session'
-import Image from 'next/image'
-
-import UserPin from '@/components/dashboard/UserPin'
 import SearchBar from '@/components/dashboard/Searchbar'
 
 export default async function Dashboard ({
@@ -31,18 +28,19 @@ export default async function Dashboard ({
 
 async function ProjectsGrid ({ searchParams }: { searchParams: any }) {
   const projects = await getProjects(searchParams)
-  return <div>{projects.example}</div>
+  console.log(projects)
+  return <div>sorry mami</div>
 }
 
 async function getProjects (params: any) {
   const searchParams = new URLSearchParams(params)
-  const res = await fetch(
+  const projects = await fetch(
     `${process.env.DOMAIN}/api/projects?${searchParams.toString()}`
-  ).then(res => res.json())
+  ).then((res) => res.json())
 
-  console.log(res)
+  console.log(projects)
 
   return {
-    example: 'hli'
+    exmaple: 'hola'
   }
 }
