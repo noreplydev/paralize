@@ -11,8 +11,6 @@ export async function GET(request: Request) {
     try {
         const projects = await Projects.find()
 
-        console.log('projects', projects)
-
         return NextResponse.json({
             example: 'Hello World!'
         })
